@@ -8,7 +8,6 @@ const BookForm = () => {
     const [formData, setFormData] = useState({
         title: '',
         author: '',
-        id: uuidv4(),
     })
 
     const dispatch = useDispatch()
@@ -16,8 +15,8 @@ const BookForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (formData.title && formData.author) {
+            dispatch(addBook({ ...formData, id: uuidv4() }))
             setFormData({ title: '', author: '' })
-            dispatch(addBook(formData))
         }
     }
     return (
