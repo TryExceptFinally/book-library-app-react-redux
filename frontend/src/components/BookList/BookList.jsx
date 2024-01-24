@@ -64,7 +64,8 @@ const BookList = () => {
                                 by{' '}
                                 <strong>
                                     {highlightMatch(book.author, authorFilter)}
-                                </strong>
+                                </strong>{' '}
+                                ({book.source})
                             </div>
                             <div className="book-actions">
                                 <span
